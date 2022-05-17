@@ -1,0 +1,45 @@
+body{
+    background-color:#013B1A ;
+}
+
+
+.container {
+    /* width: 80%; */
+    /* margin: auto; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55%;
+  }
+
+.header {
+    border-bottom: 3px solid #FFBD59;
+    display: flex;
+  }
+
+  .header .container {
+    justify-content: space-between;
+    /* display: flex ;
+    flex-direction: row; */
+  }
+
+
+  .navbar {
+  width: 300px;
+  display: flex ;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #FFBD59;
+}
+
+a{
+  color:inherit;
+   /* ele herda a cor que você definiu */
+}
+
+.titulo {
+  width: 150px;
+  /* height: 100px; */
+}
