@@ -4,8 +4,6 @@ body{
 
 
 .container {
-    /* width: 80%; */
-    /* margin: auto; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,8 +17,6 @@ body{
 
   .header .container {
     justify-content: space-between;
-    /* display: flex ;
-    flex-direction: row; */
   }
 
 
@@ -48,7 +44,7 @@ a{
     height: max-content;
     padding: 10% 10%;
     color: #7ED957;
-    background-image: url("./imagem/pexels-pixabay-326278.jpg");
+    background-image: url(../imagem/pexels-pixabay-326278.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,9 +52,10 @@ a{
   
   .banner .frase {
     height: 300px;
-    width: 250px;
+    width: 380px;
     margin-left: 15%;
-    font-size: 30px;
+    font-size: 40px;
     justify-content: center;
     align-items: center;
+    font-family: " Tiro Devanagari Sanskrit', serif;"
   }

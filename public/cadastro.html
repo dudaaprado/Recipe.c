@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe</title>
-    <link rel="stylesheet" href="./cadastro.css">
+    <link rel="stylesheet" href="./css/cabecalho.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
 </head>
 
 <body>
+    <!-- cabeçalho-->
     <div class="header">
         <img src="./imagem/Logotipo cozinha mineira verde feito a mão verde.png" alt="" class="titulo">
         <div class="container">
@@ -20,129 +22,115 @@
                 <li> <a href="cadastro.html">Cadastro</a></li>
                 <li> <a href="./login.html">Login</a></li>
             </ul>
-            </div>
-        </div>
-  <!--header fim-->
-
-
-  <div class="banner ">
-    <div class="alerta_erro">
-        <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
         </div>
     </div>
-    <div class="container tamanho-conteudo">
-        <div class="card medio">
-            <h2>Bem-vindo!</h2>
-            <div class="formulario">
+    <!-- cabeçalho fim -->
 
-                <!--
+
+
+    <!--
                      Para inserir mais um campo, copie uma das inputs abaixo.
                      Assim que inserir vá para o script abaixo.
                  -->
 
-                <span class="tipo_campo">Nome:</span>
-                <input id="nome_input" type="text" placeholder="Seu nome">
+       <h1 class="titulo_cadastro">Cadastro</h1>
 
-                <span class="tipo_campo">E-mail:</span>
-                <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+       
+    <section class="section_cadastro">
+        <span class="tipo_campo">Nome:</span>
+        <input id="nome_input" class="inputs" type="text" placeholder="Seu nome">
+        <br><br>
+        <span class="tipo_campo">E-mail:</span>
+        <input id="email_input" class="inputs" type="text" placeholder="meuemail@.com">
+        <br><br>
+        <span class="tipo_campo">Senha:</span>
+        <input id="senha_input"  class="inputs" type="password" placeholder="******">
+        <br><br>
+        <span class="tipo_campo">Confirmação da Senha:</span>
+        <input id="confirmacao_senha_input"  class="inputs" type="password" placeholder="******">
+        <br><br>
+        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+        <img src=" ---" alt="">
 
-                <span class="tipo_campo">Senha:</span>
-                <input id="senha_input" type="password" placeholder="******">
 
-                <span class="tipo_campo">Confirmação da Senha:</span>
-                <input id="confirmacao_senha_input" type="password" placeholder="******">
 
-                <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
-            </div>
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif">
-            </div>
-
-            <div id="div_erros_login">
-
-            </div>
+        </div><br>
+        <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
         </div>
-    </div>
-</div>
-
-<!--footer inicio-->
-<div class="footer">
-    <div class="container">
-        <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-    </div>
-</div>
-<!--footer fim-->
-
+    </section>
+    <!-- sessão de login fim-->
 
 </body>
 
 </html>
 
 <script>
-function cadastrar() {
-    aguardar();
+    function cadastrar() {
+        aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        // variaveis dos inputs
 
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-        finalizarAguardar();
+            finalizarAguardar();
+            return false;
+            // mostrando mensagem de erro em inputs vazias
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
         return false;
     }
-    else {
-        setInterval(sumirMensagem, 5000)
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nomeVar,
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            cardErro.style.display = "block";
-
-            mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-            setTimeout(() => {
-                window.location = "login.html";
-            }, "2000")
-            
-            limparFormulario();
-            finalizarAguardar();
-        } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-    });
-
-    return false;
-}
-
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}
 
 </script>

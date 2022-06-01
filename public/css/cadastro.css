@@ -2,29 +2,67 @@ body{
     background-color:#013B1A ;
 }
 
+/* 
+titulo cadastro */
+.titulo_cadastro{
+  color: #FFBD59 ;
+  margin-top: 10%;
+  margin-left: 50%;
+  font-family: " Tiro Devanagari Sanskrit', serif;"
+}
 
-.container {
-    /* width: 80%; */
-    /* margin: auto; */
+
+/* box do caastro */
+.section_cadastro{
+  width: 250px;
+  height: 150px;
+  margin-left: 50%;
+}
+
+/* 
+inputs do cadastro */
+.inputs{  
+height: 22%;
+width: 105%;
+border-radius: 30px;
+background-color: #192646;
+border-color:#FFBD59 ;
+font-family: " Tiro Devanagari Sanskrit', serif;"
+}
+
+
+/* titulo dos campos */
+.tipo_campo{
+  background-color: #013B1A;
+  color: #FFBD59 ;
+margin-left: 20px;
+font-family: " Tiro Devanagari Sanskrit', serif;"
+}
+
+
+ /* botão */
+.btn{
+  height: 22%;
+width: 105%;
+color: #FFBD59;
+background-color:#192646 ;
+border-radius: 20px;
+border-color:#FFBD59 ;
+font-family: " Tiro Devanagari Sanskrit', serif;"
+}
+
+
+/* posição da barra de navegação */
+
+
+  .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 55%;
   }
 
-.header {
-    border-bottom: 3px solid #FFBD59;
-    display: flex;
-  }
-
-  .header .container {
-    justify-content: space-between;
-    /* display: flex ;
-    flex-direction: row; */
-  }
-
-
-  .navbar {
+  .navbar  /* barra de navegação*/ {
   width: 300px;
   display: flex ;
   flex-direction: row;
@@ -32,6 +70,7 @@ body{
   justify-content: space-between;
   list-style: none;
   color: #FFBD59;
+  font-family: " Tiro Devanagari Sanskrit', serif;"
 }
 
 a{

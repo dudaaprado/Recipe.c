@@ -2,44 +2,71 @@ body{
     background-color:#013B1A ;
 }
 
-
+/* pisoção da barra de navegação */
 .container {
-    /* width: 80%; */
-    /* margin: auto; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 55%;
+    
   }
 
-.header {
-    border-bottom: 3px solid #FFBD59;
-    display: flex;
-  }
-
-  .header .container {
-    justify-content: space-between;
-    /* display: flex ;
-    flex-direction: row; */
-  }
-
-
-  .navbar {
-  width: 300px;
-  display: flex ;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  color: #FFBD59;
-}
 
 a{
   color:inherit;
    /* ele herda a cor que você definiu */
 }
+  
+/* titulo do login */
+.login {
+  color: #FFBD59 ;
+  margin-top: 10%;
+  margin-left: 46%;
+  font-family: " Tiro Devanagari Sanskrit', serif;";
+}
 
-.titulo {
-  width: 150px;
-  /* height: 100px; */
+
+/* box do login */
+.section_login{
+  width: 250px;
+  height: 150px;
+  margin-left: 40%;
+}
+
+/* 
+inputs do login */
+.inputs{  
+ height: 100%;
+  border-radius: 30px;
+  background-color: #192646;
+  border-color:#FFBD59 ;
+  font-family: " Tiro Devanagari Sanskrit', serif;";
+  font-size: larger;
+
+  }
+
+
+
+
+  /* titulo dos campos */
+.tipo_campo{
+  background-color: #013B1A;
+  color: #FFBD59 ;
+margin-left: 20px;
+font-family: " Tiro Devanagari Sanskrit', serif;";
+font-size: larger;
+}
+
+
+ /* botão */
+.btn{
+  height: 22%;
+width: 100%;
+color: #FFBD59;
+background-color:#192646 ;
+border-radius: 30px;
+border-color:#FFBD59 ;
+font-family: " Tiro Devanagari Sanskrit', serif;";
+font-size: larger;
+
 }
