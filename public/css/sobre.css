@@ -26,9 +26,16 @@
 
 }
 
+.cards {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  width: 1300px;
+}
+
 .card {
-  box-shadow: 0 0 10px #FFBD59, 3px 3px 10px #DC9623;
-  background: #013B1A;
+  
+
   width: 38vw;
   height: 42vh;
   margin: 2vw;

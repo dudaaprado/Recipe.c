@@ -81,3 +81,23 @@ a{
     width: 150px;
     /* height: 100px; */
   }
+
+  .loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .tamanho-conteudo { 
+    height: fit-content !important;
+  }
+    

@@ -1,3 +1,4 @@
+<s><s></s></s>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,41 +26,42 @@
         </div>
     </div>
     <!-- cabeçalho fim -->
-
-
-
-    <!--
-                     Para inserir mais um campo, copie uma das inputs abaixo.
-                     Assim que inserir vá para o script abaixo.
-                 -->
-
-       <h1 class="titulo_cadastro">Cadastro</h1>
-
-       
-    <section class="section_cadastro">
-        <span class="tipo_campo">Nome:</span>
-        <input id="nome_input" class="inputs" type="text" placeholder="Seu nome">
-        <br><br>
-        <span class="tipo_campo">E-mail:</span>
-        <input id="email_input" class="inputs" type="text" placeholder="meuemail@.com">
-        <br><br>
-        <span class="tipo_campo">Senha:</span>
-        <input id="senha_input"  class="inputs" type="password" placeholder="******">
-        <br><br>
-        <span class="tipo_campo">Confirmação da Senha:</span>
-        <input id="confirmacao_senha_input"  class="inputs" type="password" placeholder="******">
-        <br><br>
-        <button class="btn" onclick="cadastrar()">Cadastrar</button>
-        <img src=" ---" alt="">
-
-
-
-
-        </div><br>
-        <div id="div_aguardar" class="loading-div">
-            <img src="./assets/circle-loading.gif" id="loading-gif">
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
         </div>
-    </section>
+    </div>
+                    <!--titulo de cadastro-->
+                    <h1 class="titulo_cadastro">Cadastro</h1>
+                    <!--card de cadastro-->
+                    <section class="section_cadastro">
+                        <span class="tipo_campo">Nome:</span>
+                        <input id="nome_input" class="inputs" type="text" placeholder="Seu nome">
+                        <br><br>
+                        <span class="tipo_campo">E-mail:</span>
+                        <input id="email_input" class="inputs" type="text" placeholder="meuemail@.com">
+                        <br><br>
+                        <span class="tipo_campo">Senha:</span>
+                        <input id="senha_input" class="inputs" type="password" placeholder="******">
+                        <br><br>
+                        <span class="tipo_campo">Confirmação da Senha:</span>
+                        <input id="confirmacao_senha_input" class="inputs" type="password" placeholder="******">
+                        <br><br>
+                        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
+
+              
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- sessão de login fim-->
 
 </body>
@@ -68,7 +70,6 @@
 
 <script>
     function cadastrar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -77,10 +78,10 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
         // variaveis dos inputs
-
+            // mensagem de erro 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "todos os campos estão em branco";
 
             finalizarAguardar();
             return false;
@@ -113,17 +114,14 @@
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "./login.html";
                 }, "2000")
 
-                limparFormulario();
-                finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;
