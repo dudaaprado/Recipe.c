@@ -2,21 +2,34 @@ body{
     background-color:#013B1A ;
 }
 
+
+.body_cadastro{
+display: flex;
+
+}
+
+
+.class_gif{
+margin-left: - 13%;
+
+}
+
 /* 
 titulo cadastro */
 .titulo_cadastro{
   color: #FFBD59 ;
-  margin-top: 10%;
-  margin-left: 50%;
+  margin-top: 5%;
+  margin-left: -6%;
   font-family: " Tiro Devanagari Sanskrit', serif;"
 }
 
 
 /* box do caastro */
 .section_cadastro{
-  width: 250px;
-  height: 150px;
-  margin-left: 50%;
+  width: 267px;
+  height: 200px;
+  margin-left: -13%;
+  margin-top: 9%;
 }
 
 /* 
@@ -100,4 +113,8 @@ a{
   .tamanho-conteudo { 
     height: fit-content !important;
   }
-    
+  /* gif di cadastro */
+  #img_cadastro{
+    margin: 10vh 10vw ;
+    margin-left: 6%; 
+  }

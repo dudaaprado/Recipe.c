@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe</title>
-    
+
     <link rel="stylesheet" href="./css/cabecalho.css">
     <link rel="stylesheet" href="./css/login.css">
 </head>
@@ -21,40 +21,49 @@
                 <li>|</li>
                 <li> <a href="./cadastro.html">Cadastro</a> </li>
                 <li> <a href="./login.html"> Login</a></li>
-
             </ul>
         </div>
+    </div>
+
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
         </div>
+    </div>
 
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
+    <div class="card">
+        <h2>Olá de volta!</h2>
+    </div>
+
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
         </div>
+    </div>
 
-            <div class="card">
-                <h2>Olá de volta!</h2>
-            </div>
-       
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
-                       <h1 class="login">login</h1>
-                   <section class="section_login">
-                   <div>
-                        <span class="tipo_campo" >E-mail: </span>
-                        <br><br>
-                        <input id="email_input"  class="inputs" type="text" placeholder="Login">
-                               <br><br>
-                        <span class="tipo_campo">Senha:</span>
-                        <input id="senha_input"  class="inputs" type="password" placeholder="******">
-                           <br> <br>
-                        <button class="btn" onclick="entrar()">Entrar</button>
-                    </div>
-                       </section>
 
+
+
+    <div class="body_login">
+
+        <div class="gif_login">
+            <img src="./imagem/pizza.gif" alt="">
+        </div>
+          <div>
+        <h1 class="login">login</h1>
+           </div>
+        <section class="section_login">
+            <span class="tipo_campo">E-mail: </span>
+            <br><br>
+            <input id="email_input" class="inputs" type="text" placeholder="Login">
+            <br><br>
+            <span class="tipo_campo">Senha:</span>
+            <input id="senha_input" class="inputs" type="password" placeholder="******">
+            <br> <br>
+            <button class="btn" onclick="entrar()">Entrar</button>
+        </section>
+
+    </div>
 
 
 </body>
@@ -107,8 +116,8 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "./dashboard/dasboard.html";
+                    }, 2); // apenas para exibir o loading
 
                 });
 

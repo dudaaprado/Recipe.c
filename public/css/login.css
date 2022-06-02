@@ -2,14 +2,19 @@ body{
     background-color:#013B1A ;
 }
 
-/* pisoção da barra de navegação */
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 55%;
-    
-  }
+.header {
+  border-bottom: 3px solid #FFBD59;
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
 
 
 a{
@@ -20,23 +25,26 @@ a{
 /* titulo do login */
 .login {
   color: #FFBD59 ;
-  margin-top: 10%;
-  margin-left: 46%;
+  margin-top: 180%;
+    margin-left: 483%;
   font-family: " Tiro Devanagari Sanskrit', serif;";
+  font-size: xx-large;
 }
 
 
 /* box do login */
 .section_login{
-  width: 250px;
-  height: 150px;
-  margin-left: 40%;
+  width: 235px;
+  height: 42px;
+  margin-left: 9%;
+  margin-top: 10%
 }
 
 /* 
 inputs do login */
 .inputs{  
- height: 100%;
+  height: 105%;
+  width: 127%;
   border-radius: 30px;
   background-color: #192646;
   border-color:#FFBD59 ;
@@ -45,23 +53,20 @@ inputs do login */
 
   }
 
-
-
-
   /* titulo dos campos */
 .tipo_campo{
   background-color: #013B1A;
   color: #FFBD59 ;
 margin-left: 20px;
 font-family: " Tiro Devanagari Sanskrit', serif;";
-font-size: larger;
+font-size: 156%;
 }
 
 
  /* botão */
 .btn{
-  height: 22%;
-width: 100%;
+height: 115%;
+width: 133%;
 color: #FFBD59;
 background-color:#192646 ;
 border-radius: 30px;
@@ -69,4 +74,20 @@ border-color:#FFBD59 ;
 font-family: " Tiro Devanagari Sanskrit', serif;";
 font-size: larger;
 
+}
+
+.body_login{
+display: flex;
+}
+
+.gif_login{
+
+  margin-left: - 13%;
+}
+
+.inputs_login{
+  margin-left: 12%;
+}
+img{
+  margin-left: 33%;
 }
