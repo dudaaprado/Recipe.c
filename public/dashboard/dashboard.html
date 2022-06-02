@@ -24,52 +24,41 @@
 
 <body onload="validarSessao(), atualizarFeed()">
     <!-- <body onload="validarSessao()"> -->
-
-    <div class="janela">
-        <div class="header-left">
-            <h1>Recipe</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Ingredientes mais uados</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Calendario</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+   
+    </div>
+    <div class="header">
+        <img src="../imagem/Logotipo cozinha mineira verde feito a mão verde.png" alt="" class="titulo">
+        <div class="container">
+            <ul class="navbar">
+                <li> <a href="../index.html">Home</a> </li>
+                <li> <a href="../sobre.html">Sobre</a> </li>
+                <li>|</li>
+                <li> <a href="../cadastro.html">Cadastro</a></li>
+                <li> <a href="../login.html">Login</a></li>
+            </ul>
         </div>
+    </div> 
+    <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+    </div>
 
-        <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(2)">Aquario 2</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(3)">Aquario 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button>
-                <!-- duda os numeros dentro do paramtros são o ID que estão no banco-->
-            </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
-            </div>
+  <!-- fim do cabeçalho-->
+    <div class="hello">
+        <h3>Olá, <span id="b_usuario"></span>!</h3>
+    </div>
+<!-- mesagem de olá-->
+
+
+    <div class="dash">
+        <div class="btns-dash">
+            <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+            <button class="btn-chart" onclick="obterDadosGrafico(1)">Grafico</button>
+            <!-- duda os numeros dentro do paramtros são o ID que estão no banco-->
         </div>
+        <div class="graph">
+            <canvas id="canvas_grafico"></canvas>
+        </div>
+    </div>
     </div>
 
 
@@ -130,15 +119,44 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-umidade',
+                    yAxisID: 'ingrediente 0',
                     label: 'Umidade',
                     borderColor: '#32B9CD',
                     backgroundColor: '#32b9cd8f',
                     fill: true,
                     data: []
                 },
+
                 {
-                    yAxisID: 'y-temperatura',
+                    yAxisID: 'ingrediente 1',
+                    label: 'Temperatura',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+
+                {
+                    yAxisID: 'ingrediente 2',
+                    label: 'Temperatura',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+
+
+                {
+                    yAxisID: 'ingrediente 3',
+                    label: 'Temperatura',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+
+                {
+                    yAxisID: 'ingrediente 4',
                     label: 'Temperatura',
                     borderColor: '#FFF',
                     backgroundColor: '#32b9cd8f',
@@ -151,14 +169,18 @@
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
+            dados.datasets[0].data.push(registro.ingrediente_1);
+            dados.datasets[1].data.push(registro.ingrediente_2);
+            dados.datasets[2].data.push(registro.ingrediente_3);
+            dados.datasets[3].data.push(registro.ingrediente_4);
+            dados.datasets[4].data.push(registro.ingrediente_5);
+
         }
 
         console.log(JSON.stringify(dados));
 
         var ctx = canvas_grafico.getContext('2d');
-        window.grafico_linha = Chart.Line(ctx, {
+        window.grafico_linha = Chart.Bar(ctx, {
             data: dados,
             options: {
                 responsive: true,
@@ -167,29 +189,32 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Histórico recente de umidade/temperatura'
+                    text: 'Histórico recente de ingredientes mais usados'
                 },
                 scales: {
                     yAxes: [{
                         type: 'linear',
                         display: true,
                         position: 'left',
-                        id: 'y-temperatura',
+                        id: 'y-ingredientes 0',
                         ticks: {
                             beginAtZero: true,
                             max: 100,
                             min: 0
                         }
                     }, {
+
                         type: 'linear',
                         display: false,
-                        position: 'right',
-                        id: 'y-umidade',
+                        position: 'botton',
+                        id: 'y-ingredientes 1',
                         ticks: {
                             beginAtZero: true,
                             max: 100,
                             min: 0
                         },
+
+
 
                         gridLines: {
                             drawOnChartArea: false,
@@ -221,11 +246,19 @@
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir um novo valor
 
-                    dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+            
+                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir um novo valor
+
+            
+                    dados.datasets[2].data.push(novoRegistro[0].temperatura); // incluir um novo valor
+
+            
+                    dados.datasets[3].data.push(novoRegistro[0].temperatura); // incluir um novo valor
+
+            
+                    dados.datasets[4].data.push(novoRegistro[0].temperatura); // incluir um novo valor
 
                     window.grafico_linha.update();
 

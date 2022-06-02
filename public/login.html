@@ -75,7 +75,7 @@
 
 
     function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -83,11 +83,11 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = " erro para todos os campos estão em branco";
-            finalizarAguardar();
+            // finalizarAguardar();
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            setInterval(sumirMensagem, 1)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -117,7 +117,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/dashboard.html";
+                        window.location = "../dashboard/dashboard.html";
                     }, 2); // apenas para exibir o loading
 
                 });
@@ -128,7 +128,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    // finalizarAguardar(texto);
                 });
             }
 
