@@ -2,7 +2,6 @@ body{
     background-color:#013B1A ;
 }
 
-
 .container {
     display: flex;
     flex-direction: row;
@@ -51,11 +50,13 @@ a{
   }
   
   .banner .frase {
-    height: 300px;
-    width: 380px;
-    margin-left: 15%;
+    height: 383px;
+    width: 409px;
+    margin-left: 8%;
     font-size: 40px;
     justify-content: center;
     align-items: center;
-    font-family: " Tiro Devanagari Sanskrit', serif;"
+   
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap')

@@ -1,0 +1,55 @@
+body{
+    background-color:#013B1A ;
+}
+
+
+.container_header {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55%;
+  }
+
+.header {
+    border-bottom: 3px solid #FFBD59;
+    display: flex;
+  }
+
+
+
+  .container_header {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55%;
+  }
+
+  .header .container_header {
+    justify-content: space-between;
+ 
+  }
+
+
+  .navbar {
+      margin-left: 315%;
+      font-size: x-large;
+      width: 150%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      color: #FFBD59;
+      height: 76%;
+}
+
+a{
+  color:inherit;
+   /* ele herda a cor que você definiu */}
+   
+   .titulo {
+    width: 197px;
+    margin-left: 0%
+  }

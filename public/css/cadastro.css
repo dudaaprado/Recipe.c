@@ -18,9 +18,10 @@ margin-left: - 13%;
 titulo cadastro */
 .titulo_cadastro{
   color: #FFBD59 ;
-  margin-top: 5%;
-  margin-left: -6%;
-  font-family: " Tiro Devanagari Sanskrit', serif;"
+  margin-top: 2%;
+  margin-left: 14%;
+  font-family: " Tiro Devanagari Sanskrit', serif;";
+  font-size: -webkit-xxx-large;
 }
 
 
@@ -28,7 +29,7 @@ titulo cadastro */
 .section_cadastro{
   width: 267px;
   height: 200px;
-  margin-left: -13%;
+  margin-left: -19%;
   margin-top: 9%;
 }
 
@@ -115,6 +116,6 @@ a{
   }
   /* gif di cadastro */
   #img_cadastro{
-    margin: 10vh 10vw ;
-    margin-left: 6%; 
+    margin-top: 4% ;
+    margin-left: 29%; 
   }

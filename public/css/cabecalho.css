@@ -37,6 +37,6 @@ a{
    /* ele herda a cor que você definiu */}
    
    .titulo {
-    width: 150px;
-    /* height: 100px; */
+    width: 180px;
+    margin-left: 1%;
   }
