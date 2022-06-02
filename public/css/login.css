@@ -7,20 +7,20 @@ a{
 /* titulo do login */
 .login {
   height: 12%;
-  color: #FFBD59;
-  margin-top: 3%;
-  margin-left: 20%;
-  font-family: " Tiro Devanagari Sanskrit', serif;";
-  font-size: xx-large;
+    color: #FFBD59;
+    margin-top: 3%;
+    margin-left: 17%;
+    font-family: " Tiro Devanagari Sanskrit', serif;";
+    font-size: x-large;
 }
 
 
 /* box do login */
 .section_login{
-  width: 290px;
-  height: 57px;
+  width: 211px;
+  height: 50px;
   margin-left: -96%;
-  margin-top: 65%
+  margin-top: 76%;
 }
 
 /* 
@@ -72,6 +72,7 @@ display: flex;
   margin-left: 12%;
 }
 img{
-  width: 131%;
-  margin-left: 8%;
+  width: 102%;
+  margin-left: 28%;
+  height: 114%;
 }
