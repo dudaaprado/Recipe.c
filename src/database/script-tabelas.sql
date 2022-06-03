@@ -5,27 +5,27 @@
 
 CREATE DATABASE Recipe;
 USE Recipe;
+
+CREATE TABLE Tipo  
+(IDtipo INT PRIMARY KEY AUTO_INCREMENT,
+Tipo VARCHAR (90));
+select * from tipo;
+
 CREATE TABLE Usuario (IDusuario INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (45),
 Email VARCHAR (45),
 Senha VARCHAR (45),
-FK_Tipo_user INT, FOREIGN KEY (FK_Tipo) REFERENCES Tipo(IDTipo)
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+FK_Tipo_user INT, 
+FOREIGN KEY (FK_Tipo_user) REFERENCES Tipo(IDTipo)
 );
 
 CREATE TABLE Receitas 
 (IDreceitas INT PRIMARY KEY AUTO_INCREMENT,
+Nome VARCHAR (40),
 Descrição VARCHAR (800),
-Ingredientes VARCHAR (200),
+Ingredientes VARCHAR (800),
 FK_Tipo_rec INT, 
-FOREIGN KEY(FK_Tipo) REFERENCES Tipo(IDtipo)
+FOREIGN KEY(FK_Tipo_rec) REFERENCES Tipo(IDtipo)
 );
 
 CREATE TABLE Favoritos (
@@ -38,6 +38,3 @@ FOREIGN KEY (FKreceitas) REFERENCES Receitas(IDreceitas),
 PRIMARY KEY (fkreceitas, fkusuario)
 );
 
-CREATE TABLE Tipo  
-(IDtipo INT PRIMARY KEY AUTO_INCREMENT,
-Tipo VARCHAR (90));
