@@ -46,14 +46,14 @@
                         <input id="email_input" class="inputs" type="text" placeholder="meuemail@.com">
                         <br><br>
                         <span class="tipo_campo">Qual sue tipo de alimentação:</span>
-                        <select id="tipo_sel" class="inputs" type="text">
-                            <option value="0">escolha uma opção</option>
-                            <option value="1">vegano</option>
-                            <option value="2">vegetariano</option>
-                            <option value="3">Vegetariano ovo lacto</option>
-                            <option value="4">Ovolactovegetariano</option>
-                            <option value="5">Ovovegetariano</option>
-                            <option value="6">Carnivoro</option>
+                        <select id="tipo_sel" class="inputs">
+                            <option value=0>escolha uma opção</option>
+                            <option value=1>vegano</option>
+                            <option value=2>vegetariano</option>
+                            <option value=3>Vegetariano ovo lacto</option>
+                            <option value=4>Ovolactovegetariano</option>
+                            <option value=5>Ovovegetariano</option>
+                            <option value=6>Carnivoro</option>
                         </select>
                         <br><br>
                         <span class="tipo_campo">Senha:</span>
@@ -93,6 +93,7 @@
         var tipoVar = tipo_sel.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        sessionStorage.FK_tipo_rec = tipo_sel.value;
         // variaveis dos inputs
             // mensagem de erro 
         if (nomeVar == "" || emailVar == "" || tipoVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {

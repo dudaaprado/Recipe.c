@@ -1,3 +1,12 @@
-.btn-nav-white{
-    
+.dash{
+height: 80%;
+width: 50%;
+background-color:#192646;
+border-color: aliceblue;
+}
+
+.btn-chart{
+background-color:#192646;
+border-radius:10px;
+border-color: #FFBD59;
 }
