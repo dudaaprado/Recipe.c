@@ -34,7 +34,7 @@ titulo cadastro */
 }
 
 /* 
-inputs do cadastro */
+inputs do cadastro dentro do box */
 .inputs{  
 height: 22%;
 width: 105%;
@@ -44,8 +44,12 @@ border-color:#FFBD59 ;
 font-family: " Tiro Devanagari Sanskrit', serif;"
 }
 
+#tipo_sel{
+  color: #FFBD59;
+  
+}
 
-/* titulo dos campos */
+/* titulo que estão em cima dos campos */
 .tipo_campo{
   background-color: #013B1A;
   color: #FFBD59 ;
@@ -67,8 +71,6 @@ font-family: " Tiro Devanagari Sanskrit', serif;"
 
 
 /* posição da barra de navegação */
-
-
   .container {
     display: flex;
     flex-direction: row;
@@ -76,7 +78,9 @@ font-family: " Tiro Devanagari Sanskrit', serif;"
     margin-left: 55%;
   }
 
-  .navbar  /* barra de navegação*/ {
+
+/* barra de navegação*/ 
+  .navbar   {
   width: 300px;
   display: flex ;
   flex-direction: row;
@@ -93,9 +97,10 @@ a{
    
    .titulo {
     width: 150px;
-    /* height: 100px; */
   }
 
+
+  /* cards de loading e erro */
   .loading-div {
     width: 50px;
     margin: auto;

@@ -22,8 +22,8 @@ FOREIGN KEY (FK_Tipo_user) REFERENCES Tipo(IDTipo)
 CREATE TABLE Receitas 
 (IDreceitas INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR (40),
-Descrição VARCHAR (800),
-Ingredientes VARCHAR (800),
+Descrição VARCHAR (1800),
+Ingredientes VARCHAR (1800),
 FK_Tipo_rec INT, 
 FOREIGN KEY(FK_Tipo_rec) REFERENCES Tipo(IDtipo)
 );
