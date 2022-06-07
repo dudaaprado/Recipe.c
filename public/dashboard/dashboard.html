@@ -63,7 +63,7 @@
     </div>
     </div>
     <!-- pesquisar 88888888888888888888888888888888888888888888888888888888-->
-    <input type="text" id="input_dash" class="class_dash" placeholder="ensira um Ingrediente">
+    <input type="text" id="input_ingrediente" class="class_dash" placeholder="ensira um Ingrediente">
     <button onclick="pesquisar_bd()">Pesquisar</button>
     <div id="print_id"></div>
 
@@ -98,7 +98,7 @@
 
       function plotarGrafico(resposta, idAquario) {
         var dados = {
-          labels: ['alho','azeite','cebola','sal','tomato'],
+          labels: ['alho','azeite','cebola','sal','tomate'],
           datasets: [
             {
               label: "Ingredientes mais usados",
@@ -136,26 +136,45 @@
         });
       }
 
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       function pesquisar_bd() {
-        var pesquisa = input_dash.value;
-        fetch(`/tempo-real/:idAquario${pesquisa}`, { cache: "no-store" })
-          .then(function (response) {
-            if (response.status == 200) {
-              response.json().then(function (resposta) {
-                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                print_id.innerhtml=``
-              });
+        var pesquisa = input_ingrediente.value;
+        var fk_login= sessionStorage.FK_TIPO_USER
+        console.log("dash pesquisa",pesquisa)
+        console.log("dash fklogin",sessionStorage.FK_TIPO_USER)
+        
+
+        fetch(`/medidas/buscarReceitas:ingredientes`, { cache: 'no-store' })
+        .then(function (resposta) {
+            console.log("ESTOU NO THEN DO listar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    console.log(json);
+                    lista = [];
+                    
+                    for(let i = 0; i < json.length; i ++ ){
+                        lista.push(json[i]);
+                        console.log(`cadastro ${i}`)
+                        // o nome de cada botao retorna assim
+                        console.log(lista[i])
+                    }
+                    mostrarCaminhao();
+                });
             } else {
-              console.error("Nenhum dado encontrado ou erro na API");
+                console.log("Houve um erro ao tentar realizar o listar!");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
             }
-          })
-          .catch(function (error) {
-            console.error(
-              `Erro na obtenção dos dados p/ gráfico: ${error.message}`
-            );
-          });
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
       
-      }
 
 </script>

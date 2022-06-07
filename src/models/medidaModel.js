@@ -51,9 +51,27 @@ function buscarMedidasEmTempoReal() {
     return database.executar(instrucaoSql);
     // functionsomardoisnumeros (valorA,valorB){return valorA + valorB}
 }
+function buscarReceita (fk_login,ingredientes) {
+      console.log('fk do login',fk_login);
+      console.log('ingredientes',ingredientes)
+    instrucaoSql = ''
+ // buscando as metricas do analytcs dos graficos
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select nome,ingredientes,descrição from receitas join tipo on fk_tipo_rec=idtipo where fk_tipo_rec= ${fk_login} and ingredientes like '%${ingredientes}%';`;
+
+    } else {
+        alert(`Não encontramos nenhuma receita`)
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarReceita
 }
