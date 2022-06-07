@@ -38,18 +38,10 @@ function buscarMedidasEmTempoReal(req, res) {
 
 
 function buscarReceitas(req, res) {
-    var ingredientes = req.params.pesquisa;
-    var fk_login= req.params.fk_login;
-    // esse req e de requisição fizemos uma requisição no nosso back-end
-    console.log("controler",ingredientes)
-    console.log(fk_login)
+    var body = req.body;
 
-    medidaModel.buscarReceita(fk_login,ingredientes).then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
+    medidaModel.buscarReceita(body).then(function (resultado) {
+        res.status(200).json(resultado);
     }).catch(function (erro) {
         console.log(erro);
         console.log("Houve um erro ao buscar as ultimas receitas.", erro.sqlMessage);

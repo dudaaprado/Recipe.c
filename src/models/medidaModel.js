@@ -51,13 +51,11 @@ function buscarMedidasEmTempoReal() {
     return database.executar(instrucaoSql);
     // functionsomardoisnumeros (valorA,valorB){return valorA + valorB}
 }
-function buscarReceita (fk_login,ingredientes) {
-      console.log('fk do login',fk_login);
-      console.log('ingredientes',ingredientes)
+function buscarReceita (body) {
     instrucaoSql = ''
  // buscando as metricas do analytcs dos graficos
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select nome,ingredientes,descrição from receitas join tipo on fk_tipo_rec=idtipo where fk_tipo_rec= ${fk_login} and ingredientes like '%${ingredientes}%';`;
+        instrucaoSql = `select nome,ingredientes,descrição from receitas join tipo on fk_tipo_rec=idtipo where fk_tipo_rec= ${body.fkTipoUser} and ingredientes like '%${body.pesquisa}%';`;
 
     } else {
         alert(`Não encontramos nenhuma receita`)

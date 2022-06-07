@@ -9,12 +9,12 @@ router.get("/ultimas/:idAquario", function (req, res) {
 });
 
 // Mudar aqui
-router.get("/tempo-real/:idAquario", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
-})
+// router.get("/tempo-real/:idAquario", function (req, res) {
+//     medidaController.buscarMedidasEmTempoReal(req, res);
+// })
 
 // Mudar aqui
-router.get("/listarReceitas:ingredientes", function (req, res) {
+router.post("/listarReceitas", function (req, res) {
     medidaController.buscarReceitas(req, res);
 })
 

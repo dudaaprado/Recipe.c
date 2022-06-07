@@ -139,38 +139,43 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       function pesquisar_bd() {
         var pesquisa = input_ingrediente.value;
-        var fk_login= sessionStorage.FK_TIPO_USER
-        console.log("dash pesquisa",pesquisa)
-        console.log("dash fklogin",sessionStorage.FK_TIPO_USER)
-        
+        var fk_login = sessionStorage.FK_TIPO_USER
 
-        fetch(`/medidas/buscarReceitas:ingredientes`, { cache: 'no-store' })
-        .then(function (resposta) {
-            console.log("ESTOU NO THEN DO listar()!")
+        fetch('/medidas/listarReceitas', {
+          method: "post",
+          // melhor passar o post pq é uma pesquisa
+          headers: {
+            // tudo dentro do body é o meu json
+            "Content-Type": "application/json"
+          },
+          // envia tudo pra api
+          body: JSON.stringify({
+            pesquisa: pesquisa,
+            fkTipoUser: fk_login
+          })
+        })
+        .then((resposta) => {
+          if(resposta.ok) {
+            resposta.json().then((json) => {
 
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(json => {
-                    console.log(json);
-                    lista = [];
-                    
-                    for(let i = 0; i < json.length; i ++ ){
-                        lista.push(json[i]);
-                        console.log(`cadastro ${i}`)
-                        // o nome de cada botao retorna assim
-                        console.log(lista[i])
-                    }
-                    mostrarCaminhao();
-                });
-            } else {
-                console.log("Houve um erro ao tentar realizar o listar!");
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
+              for(var index =0; index < json.length; index++){
+               print_id.innerHTML +=`
+               
+               <p>${json[index].nome}, <br>
+               ${json[index].ingredientes},<br> 
+               ${json[index].descrição},<br>
+               </p>
+               <br>
+               `
+               ;
 
-        }).catch(function (erro) {
-            console.log(erro);
+              }
+
+            })
+          }
+        })
+        .catch(erro => {
+          console.log(erro);
         })
 
         return false;
