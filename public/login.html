@@ -75,10 +75,11 @@
 
 
     function entrar() {
-        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+      
+      
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
@@ -87,7 +88,7 @@
             return false;
         }
         else {
-            setInterval(sumirMensagem, 1)
+            // np
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -106,15 +107,19 @@
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
-                console.log(resposta);
+                console.log(resposta)
+                console.log(resposta.ID_USUARIO, "teste da resposta");
 
                 resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+                     console.log("JSON NO LOGIN",json);
+                    // console.log(JSON.stringify(json));
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.FK_TIPO_USER = json.FK_Tipo_user
+                    
+
 
                     setTimeout(function () {
                         window.location = "../dashboard/dashboard.html";
@@ -139,8 +144,8 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 
 </script>

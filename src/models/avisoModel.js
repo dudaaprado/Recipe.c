@@ -39,6 +39,7 @@ function pesquisarDescricao(texto) {
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
+    
 }
 
 function listarPorUsuario(idUsuario) {

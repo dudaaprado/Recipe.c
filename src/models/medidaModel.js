@@ -3,7 +3,7 @@ var database = require("../database/config");
 function buscarUltimasMedidas(idAquario, limite_linhas) {
 
     instrucaoSql = ''
-
+ // buscando as metricas do analytcs dos graficos
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select (select sum(ingredientes) from receitas  where ingredientes like '%alho%') as 'alho',
         (select sum(ingredientes) from receitas where ingredientes like '%azeite%') as 'azeite',
@@ -19,7 +19,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal() {
 
     instrucaoSql = ''
 

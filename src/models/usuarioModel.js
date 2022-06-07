@@ -15,6 +15,7 @@ function entrar(email, senha) {
         SELECT * FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
+    console.log("so pra ter ctz",database.executar(instrucao))
     return database.executar(instrucao);
 }
 
