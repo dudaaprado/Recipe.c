@@ -5,11 +5,11 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     instrucaoSql = ''
  // buscando as metricas do analytcs dos graficos
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select (select sum(ingredientes) from receitas  where ingredientes like '%alho%') as 'alho',
-        (select sum(ingredientes) from receitas where ingredientes like '%azeite%') as 'azeite',
-        (select sum(ingredientes)  from receitas where ingredientes like '%cebola%')as 'cebola',
-        (select sum(ingredientes) from receitas where ingredientes like '%sal%') as 'sal',
-        (select sum(ingredientes)  from receitas where ingredientes like '%tomate%') as 'tomate' from receitas;`;
+        instrucaoSql = `select (select count(ingredientes) from receitas  where ingredientes like '%alho%') as 'alho',
+        (select count(ingredientes) from receitas where ingredientes like '%azeite%') as 'azeite',
+        (select count(ingredientes)  from receitas where ingredientes like '%cebola%')as 'cebola',
+        (select count(ingredientes) from receitas where ingredientes like '%sal%') as 'sal',
+        (select count(ingredientes)  from receitas where ingredientes like '%tomate%') as 'tomate' from receitas limit 1`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

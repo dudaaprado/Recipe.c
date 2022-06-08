@@ -17,8 +17,8 @@ a{
 
 /* box do login */
 .section_login{
-  width: 0px;
-  height: 0px;
+  width: 100px;
+  height: 100px;
   margin-left: 0%;
   margin-top: 0%;
 }
@@ -26,9 +26,9 @@ a{
 /* 
 inputs do login */
 .inputs{  
-  height: 0%;
-  width: 0%;
-  border-radius: 0px;
+  height: 30%;
+  width: 191%;
+  border-radius: 10px;
   background-color: #192646;
   border-color:#FFBD59 ;
   font-family: " Tiro Devanagari Sanskrit', serif;";
@@ -48,11 +48,11 @@ font-size: 0%;
 
  /* botão */
 .btn{
-height: 0%;
-width: 0%;
+  height: 44%;
+  width: 175%;
 color: #FFBD59;
 background-color:#192646 ;
-border-radius: 0px;
+border-radius: 10px;
 border-color:#FFBD59 ;
 font-family: " Tiro Devanagari Sanskrit', serif;";
 font-size: larger;
