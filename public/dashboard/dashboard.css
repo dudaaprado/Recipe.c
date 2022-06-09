@@ -1,12 +1,51 @@
-.dash{
-height: 80%;
-width: 50%;
-background-color:#192646;
-border-color: aliceblue;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 55%;
 }
 
-.btn-chart{
-background-color:#192646;
-border-radius:10px;
-border-color: #FFBD59;
+.dash {
+    height: 80%;
+    width: 50%;
+    background-color: #192646;
+    border-color: aliceblue;
+    border-radius: 2%;
+}
+
+.btn-chart {
+    width: 10%;
+    height: 10%;
+    background-color: #192646;
+    border-radius: 6px;
+    border-color: #FFBD59;
+}
+
+.graph {
+    border-Color: "#FFBD59",
+
+}
+
+.class_dash {
+    margin-top: 1%;
+    background-color: #192646;
+    border-radius: 6px;
+    border-color: #FFBD59;
+
+}
+
+.btn_pqs {
+    margin-top: 2%;
+    width: 10%;
+    height: 10%;
+    background-color: #192646;
+    border-radius: 6px;
+    border-color: #FFBD59;
+}
+
+.btn-logout {
+    display: flex;
+    margin-top: 0%;
+
+
 }

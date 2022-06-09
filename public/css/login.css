@@ -8,8 +8,8 @@ a{
 .login {
   height: 0%;
     color: #FFBD59;
-    margin-top: 0%;
-    margin-left: 0%;
+    margin-top: 2%;
+    margin-left: 9%;
     font-family: " Tiro Devanagari Sanskrit', serif;";
     font-size: x-large;
 }
@@ -19,8 +19,8 @@ a{
 .section_login{
   width: 100px;
   height: 100px;
-  margin-left: 0%;
-  margin-top: 0%;
+  margin-left: -155%;
+  margin-top: 124%;
 }
 
 /* 
@@ -42,7 +42,7 @@ inputs do login */
   color: #FFBD59 ;
 margin-left: 0px;
 font-family: " Tiro Devanagari Sanskrit', serif;";
-font-size: 0%;
+font-size: x-large;
 }
 
 
@@ -50,6 +50,7 @@ font-size: 0%;
 .btn{
   height: 44%;
   width: 175%;
+  margin-left: 12%;
 color: #FFBD59;
 background-color:#192646 ;
 border-radius: 10px;
@@ -72,6 +73,6 @@ display: flex;
   margin-left: 0%;
 }
 img{
-  width: 0%;
-  margin-left: 0%;
+  width: 86%;
+  margin-left: 14%;
 }

@@ -8,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe | Dashboards</title>
 
+    <!-- <link rel="stylesheet" href="../css/cabecalho.css"> -->
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href="../css/cabecalho.css">
+   
+
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,7 +28,8 @@
 <body onload="validarSessao(), atualizarFeed()">
     <!-- <body onload="validarSessao()"> -->
    
-    </div>
+
+
     <div class="header">
         <img src="../imagem/Logotipo cozinha mineira verde feito a mão verde.png" alt="" class="titulo">
         <div class="container">
@@ -35,26 +39,23 @@
                 <li>|</li>
                 <li> <a href="../cadastro.html">Cadastro</a></li>
                 <li> <a href="../login.html">Login</a></li>
-
             </ul>
-
-
         </div>
-    </div> 
-    <div class="btn-logout" onclick="limparSessao()">
-        <h3>Sair</h3>
     </div>
 
-  <!-- fim do cabeçalho-->
-    <div class="hello">
-        <h3>Olá, <span id="b_usuario"></span>!</h3>
+    <!-- fim do cabeçalho-->
+
+    <div class="btn-logout" onclick="limparSessao()">
+        <h3></h3>
     </div>
+
+  
 <!-- mesagem de olá-->
 
 
     <div class="dash">
         <div class="btns-dash">
-            <button class="btn-chart" onclick="obterDadosGrafico(1)">Grafico</button>
+            <!-- <button class="btn-chart" onclick="obterDadosGrafico(1)">Grafico</button> -->
             <!-- os numeros dentro do paramtros são o ID que estão no banco-->
         </div>
         <div class="graph">
@@ -64,8 +65,8 @@
     </div>
     <!-- pesquisar 88888888888888888888888888888888888888888888888888888888-->
     <input type="text" id="input_ingrediente" class="class_dash" placeholder="ensira um Ingrediente">
-    <button onclick="pesquisar_bd()">Pesquisar</button>
-    <div id="print_id"></div>
+    <button onclick="pesquisar_bd()" class="btn_pqs">Pesquisar</button>
+    <div id="print_id" style="background-color:#F2AC34; border-radius: 15px;"></div>
 
 </body>
 <!-- FIM DO BODY************************************************************************************************* -->
@@ -102,8 +103,7 @@
           datasets: [
             {
               label: "Ingredientes mais usados",
-              borderColor: "#FFBD59",
-              backgroundColor: "white",
+              backgroundColor: "#F2AC34",
               data: [],
             },
           ],
@@ -154,20 +154,23 @@
             fkTipoUser: fk_login
           })
         })
+
         .then((resposta) => {
           if(resposta.ok) {
-            resposta.json().then((json) => {
-
-              for(var index =0; index < json.length; index++){
+            // transformei minha resposta em um json eu vou guardar meu json em um resultado
+            resposta.json().then((resultado) => {
+         
+              for(var index =0; index < resultado.length; index++){
                print_id.innerHTML +=`
-               
-               <p>${json[index].nome}, <br>
-               ${json[index].ingredientes},<br> 
-               ${json[index].descrição},<br>
-               </p>
+                           <br>
+               <p>Nome:</p>
+                ${resultado[index].nome},
+                <p>Ingredientes</p>
+               ${resultado[index].ingredientes},
+               <p>Descrição</p>
+               ${resultado[index].descrição},<br>
                <br>
-               `
-               ;
+               `;
 
               }
 

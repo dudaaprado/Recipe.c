@@ -38,10 +38,12 @@ function buscarMedidasEmTempoReal(req, res) {
 
 
 function buscarReceitas(req, res) {
+    // req vai conter as informações dos usuarios  . body e o corpo do req aonde esta o meu json 
     var body = req.body;
 
     medidaModel.buscarReceita(body).then(function (resultado) {
         res.status(200).json(resultado);
+
     }).catch(function (erro) {
         console.log(erro);
         console.log("Houve um erro ao buscar as ultimas receitas.", erro.sqlMessage);
