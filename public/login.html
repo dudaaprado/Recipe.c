@@ -25,20 +25,14 @@
             </ul>
         </div>
     </div>
+
+   
+<!-- 
     <div class="alerta_erro">
         <div class="card_erro" id="cardErro">
             <span id="mensagem_erro"></span>
         </div>
-    </div>
-
-
-
-
-    <div class="alerta_erro">
-        <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
-        </div>
-    </div>
+    </div> -->
 
 
 
@@ -50,7 +44,7 @@
         </div>
 
         <div class="login" >
-            <h1 >login :</h1>
+            <h1 >Login :</h1>
         </div>
         <div>
         <section class="section_login">
@@ -65,7 +59,11 @@
         </section>
     </div>
     </div>
-
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
 
 </body>
 </html>
@@ -83,7 +81,8 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = " erro para todos os campos estão em branco";
-            // finalizarAguardar();
+            finalizarAguardar();
+            alert('todos os campos estão em branco');
             return false;
         }
         else {
@@ -143,8 +142,8 @@
         return false;
     }
 
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>

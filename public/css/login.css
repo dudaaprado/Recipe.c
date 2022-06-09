@@ -71,8 +71,25 @@ display: flex;
 
 .inputs_login{
   margin-left: 0%;
+  color: antiquewhite;
 }
 img{
   width: 86%;
   margin-left: 14%;
+}
+
+#mensagem_erro{
+  color: white;
+  font-size: medium;
+  width: 300px;
+}
+
+.alerta_erro{
+  margin-left: 46%;
+  background-color: #FF5757;
+  border-radius: 9px;
+  width: 14%;
+  margin-top: -6%
+
+
 }

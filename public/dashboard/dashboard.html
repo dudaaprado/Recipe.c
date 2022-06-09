@@ -64,9 +64,13 @@
     </div>
     </div>
     <!-- pesquisar 88888888888888888888888888888888888888888888888888888888-->
-    <input type="text" id="input_ingrediente" class="class_dash" placeholder="ensira um Ingrediente">
+    <div class="ultima">
+    <input type="text" id="input_ingrediente" class="class_input_body" placeholder="ensira um Ingrediente">
     <button onclick="pesquisar_bd()" class="btn_pqs">Pesquisar</button>
-    <div id="print_id" style="background-color:#F2AC34; border-radius: 15px;"></div>
+    </div>
+
+    <div id="print_id" style="background-color:#F2AC34; border-radius: 15px;">
+    </div>
 
 </body>
 <!-- FIM DO BODY************************************************************************************************* -->
@@ -172,8 +176,9 @@
                <br>
                `;
 
+                
               }
-
+          
             })
           }
         })

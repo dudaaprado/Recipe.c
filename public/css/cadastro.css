@@ -38,10 +38,11 @@ inputs do cadastro dentro do box */
 .inputs{  
 height: 22%;
 width: 105%;
-border-radius: 30px;
+border-radius: 13px;
 background-color: #192646;
 border-color:#FFBD59 ;
-font-family: " Tiro Devanagari Sanskrit', serif;"
+font-family: " Tiro Devanagari Sanskrit', serif;";
+color: antiquewhite;
 }
 
 #tipo_sel{
@@ -64,7 +65,7 @@ font-family: " Tiro Devanagari Sanskrit', serif;"
 width: 105%;
 color: #FFBD59;
 background-color:#192646 ;
-border-radius: 20px;
+border-radius: 13px;
 border-color:#FFBD59 ;
 font-family: " Tiro Devanagari Sanskrit', serif;"
 }
@@ -123,4 +124,19 @@ a{
   #img_cadastro{
     margin-top: 6% ;
     margin-left: 40%; 
+  }
+
+  .loading-div{
+    background-color: #7ED957;
+  }
+
+  .alerta_erro{
+    margin-left: 54%;
+    border-radius: 10px;
+    width: 16%;
+    margin-top: 1%;
+
+  }
+  #mensagem_erro{
+    color: white;
   }
