@@ -46,7 +46,7 @@ function buscarReceitas(req, res) {
 
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas receitas.", erro.sqlMessage);
+        console.log("erro em buscar ultimas receitas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }

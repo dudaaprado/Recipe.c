@@ -31,8 +31,10 @@ display: flex;
 }
 
 .class_input_body {
-    margin-left: 27%;
-    margin-top: 1%;
+    color: white;
+    font-size: 116%;
+    margin-left: 24%;
+    margin-top: 2%;
     background-color: #192646;
     border-radius: 6px;
     border-color: #FFBD59;
@@ -41,10 +43,11 @@ display: flex;
 
 .btn_pqs {
     margin-top: 2%;
-    width: 10%;
+    width: 8%;
     background-color: #192646;
     border-radius: 6px;
     border-color: #FFBD59;
+    font-size: 120%;
 }
 
 .btn-logout {

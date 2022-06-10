@@ -53,7 +53,7 @@ function buscarMedidasEmTempoReal() {
 }
 function buscarReceita (body) {
     instrucaoSql = ''
- // buscando as metricas do analytcs dos graficos
+ // buscando as receitas
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select nome,ingredientes,descrição from receitas join tipo on fk_tipo_rec=idtipo where fk_tipo_rec= ${body.fkTipoUser} and ingredientes like '%${body.pesquisa}%';`;
 
